@@ -12,11 +12,12 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_call:
-    ## inputs:
-     ## username:
-      ##  description: 'A username passed from the caller workflow'
-       ## default: 'john-doe'
-       ## required: false
+    inputs:
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
        ## type: string
      ## name:
       ## type: choice
