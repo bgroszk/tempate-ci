@@ -61,4 +61,4 @@ jobs:
     steps:
       - name: set result output
         id: set-result
-        run: echo "::set-output name=step-result::success"
+        run: echo "::set-output name=step-result::DupaJasiu"
