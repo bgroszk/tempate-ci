@@ -87,4 +87,4 @@ jobs:
         run: |
           cat /etc/centos-release
           curl http://serverTomcat:80
-          # curl http://127.0.0.1:81 nie dziala jakty nie wystawial na porcie 81
+          # curl http://127.0.0.1:81 nie dziala jakty nie wystawial na porcie 81 w kontenrze ale dziala w hoscie runnera - second-job
