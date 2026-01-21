@@ -51,3 +51,13 @@ jobs:
           echo ${{ toJson(github.ref) }},
           echo ${{ toJson(github.workflow)}} 
           echo ${{ secrets.haselko }} 
+  set-result:
+    # ustawia wynik ktory zostanie przekazany do workflow wywolujacy ten workflow
+    runs-on: ubuntu-latest
+    outputs:
+      outcome: ${{steps.set-result.outputs.step-result }}
+    steps:
+      - name: set result output
+        id: set-result
+        run: echo "::set-output name=step-result::seccess"
+    
