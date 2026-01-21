@@ -62,3 +62,11 @@ jobs:
       - name: set result output
         id: set-result
         run: echo "::set-output name=step-result::DupaJasiu"
+  docker-job:
+    # wszystkie taski w ramch tego joba beda uruchoomione w kontenerze
+    runs-on: ubuntu-latest
+    container:
+      image: centos:centos7.9.2009
+    steps:
+      - name: check run in container
+        run: cat/etc/*release
