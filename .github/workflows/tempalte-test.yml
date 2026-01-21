@@ -12,19 +12,10 @@ on:
         required: true
     outputs:
       result:
-        value: "${{ jobs.ci.outputs.outcome }}"
+        value: "${{ jobs.result-job.outputs.outcome }}"
         
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  ci:
-    # ustawia wynik ktory zostanie przekazany do workflow wywolujacy ten workflow
-    runs-on: ubuntu-latest
-    outputs:
-      outcome: ${{ steps.set-result.outputs.step-result }}
-    steps:
-      - name: set result output
-        id: set-result
-        run: echo "::set-output name=step-result::success"
   first-job:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -62,3 +53,12 @@ jobs:
           echo ${{ toJson(github.ref) }},
           echo ${{ toJson(github.workflow)}} 
           echo ${{ secrets.haselko }} 
+  result-job:
+    # ustawia wynik ktory zostanie przekazany do workflow wywolujacy ten workflow
+    runs-on: ubuntu-latest
+    outputs:
+      outcome: ${{ steps.set-result.outputs.step-result }}
+    steps:
+      - name: set result output
+        id: set-result
+        run: echo "::set-output name=step-result::success"
