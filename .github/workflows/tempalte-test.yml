@@ -55,7 +55,7 @@ jobs:
     # ustawia wynik ktory zostanie przekazany do workflow wywolujacy ten workflow
     runs-on: ubuntu-latest
     outputs:
-      outcome: ${{steps.set-result.outputs.step-result }}
+      outcome: ${{ steps.set-result.outputs.step-result }}
     steps:
       - name: set result output
         id: set-result
