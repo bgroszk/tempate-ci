@@ -73,7 +73,7 @@ jobs:
         env:
           DUPA: dupa
         ports: 
-          - 8001:80
+          - 80:8001
     steps:
       - name: check run in container
         run: |
