@@ -67,6 +67,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: centos:centos7.9.2009
+    services:
+      serverTomcat:
+        image: tomcat:jre21
     steps:
       - name: check run in container
-        run: cat /etc/centos-release
+        run: |
+          cat /etc/centos-release
+          curl http://tomcat:8080
