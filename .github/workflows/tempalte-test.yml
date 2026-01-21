@@ -74,4 +74,4 @@ jobs:
       - name: check run in container
         run: |
           cat /etc/centos-release
-          curl http://tomcat:8080
+          curl http://serverTomcat:8080
