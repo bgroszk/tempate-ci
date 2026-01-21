@@ -73,9 +73,10 @@ jobs:
         env:
           DUPA: dupa
         ports: 
-          - 80:8001
+          - 81:80
     steps:
       - name: check run in container
         run: |
           cat /etc/centos-release
-          curl http://serverTomcat:8001
+          curl http://serverTomcat:80
+          curl http://127.0.0.1:81
