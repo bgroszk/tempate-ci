@@ -69,4 +69,4 @@ jobs:
       image: centos:centos7.9.2009
     steps:
       - name: check run in container
-        run: cat/etc/*release
+        run: cat /etc/*release
