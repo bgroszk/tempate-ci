@@ -51,7 +51,7 @@ jobs:
           echo ${{ toJson(github.ref) }},
           echo ${{ toJson(github.workflow)}} 
           echo ${{ secrets.haselko }} 
-  set-result:
+  ci:
     # ustawia wynik ktory zostanie przekazany do workflow wywolujacy ten workflow
     runs-on: ubuntu-latest
     outputs:
