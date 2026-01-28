@@ -69,8 +69,8 @@ jobs:
           echo ${{ toJson(github.workflow)}} 
           echo ${{ secrets.haselko }} 
       - run: groovy -e '
-            def name = "Groszek"
-            println "Hello ${name}"
+            def name = "Groszek";
+            println ("Hello ${name}")
           '
   result-job:
     # ustawia wynik ktory zostanie przekazany do workflow wywolujacy ten workflow
