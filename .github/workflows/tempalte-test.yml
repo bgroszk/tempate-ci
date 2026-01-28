@@ -68,7 +68,7 @@ jobs:
           echo ${{ toJson(github.ref) }},
           echo ${{ toJson(github.workflow)}} 
           echo ${{ secrets.haselko }} 
-          groovy -e '
+      - run: groovy -e '
             def name = System.getenv("GITHUB_ACTOR")
             println "Hello ${name}"
           '
