@@ -68,6 +68,10 @@ jobs:
           echo ${{ toJson(github.ref) }},
           echo ${{ toJson(github.workflow)}} 
           echo ${{ secrets.haselko }} 
+          groovy -e '
+            def name = System.getenv("GITHUB_ACTOR")
+            println "Hello ${name}"
+          '
   result-job:
     # ustawia wynik ktory zostanie przekazany do workflow wywolujacy ten workflow
     runs-on: ubuntu-latest
